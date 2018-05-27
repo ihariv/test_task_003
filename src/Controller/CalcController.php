@@ -62,6 +62,7 @@ class CalcController extends Controller
         // $term - срок кредита (в месяцах), $rate процентная ставка, $amount - сумма кредита (в рублях)
         // $month - месяц начала выплат, $year - год начала выплат, $round - округление сумм
 
+        //@todo need save param in db and return param_id
         $result = array();
 
         $term   = (integer)$term;
@@ -77,6 +78,7 @@ class CalcController extends Controller
 
         for ($i = 1; $i <= $term; $i++) {
 
+            //@todo $result[$i] -- need use model with param_id
             $result[$i] = array();
             $full_debt  = $payment * ($term - $i + 1);
 
@@ -91,6 +93,7 @@ class CalcController extends Controller
             $result[$i][$this->l('payment')]     = number_format($payment, $round, ',', ' ');
             $result[$i][$this->l('full_dept')]   = number_format($full_debt, $round, ',', ' ');
 
+            //@todo save in db $result[$i] with relative key (param_id->params.id)
             $debt = $debt - $credit_pay;
 
             if ($month++ >= 12) {
