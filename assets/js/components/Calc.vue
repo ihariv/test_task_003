@@ -89,7 +89,7 @@
                     alert ("Please full all fields");
                     return;
                 }
-                if (this.amount=="" < this.term==""){
+                if (this.amount < this.term){
                     alert ("Your data isn't correct");
                     return;
                 }
