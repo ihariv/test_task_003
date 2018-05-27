@@ -62,6 +62,7 @@ class CalcController extends Controller
         // $term - срок кредита (в месяцах), $rate процентная ставка, $amount - сумма кредита (в рублях)
         // $month - месяц начала выплат, $year - год начала выплат, $round - округление сумм
 
+        //@todo params -- need use model
         //@todo need save param in db and return param_id
         $result = array();
 
